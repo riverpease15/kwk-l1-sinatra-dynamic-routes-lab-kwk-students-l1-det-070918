@@ -36,7 +36,7 @@ class App < Sinatra::Base
     elsif @operation == "divide"
     answer = @number1 / @number2
   else
-    "Unable to perform operation."
+    answer = "Unable to perform operation."
     end
     answer.to_s
   end
