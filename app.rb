@@ -12,11 +12,9 @@ class App < Sinatra::Base
   end
   
   get '/say/:number/:phrase' do
-    @number = params[:number]
-    @phrase = params[:phrase]
-    until number == number
-      "#{@phrase}"
-      number += 1
+    final_string = ""
+    (params[:number].to_i).times do
+      final_string += "#{params[:phrase]}\n"
     end
   end
   
@@ -34,6 +32,14 @@ class App < Sinatra::Base
     @number1 = params[:number1.to_i]
     @number2 = params[:number2.to_i]
     if @operation == "add"
+      answer = @number1 + @number2
     elsif @operation == "subtract"
+      answer = @number1 - @number2
+    elsif @operation == "multiply"
+      answer = @number1 * @number2
+    elsif @operation == "divide"
+    answer = @number1 / @number2
+  else
+    "Unable to perform operation."
   end
 end
