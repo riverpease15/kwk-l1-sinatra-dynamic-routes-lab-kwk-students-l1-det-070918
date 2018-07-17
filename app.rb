@@ -3,8 +3,7 @@ require_relative 'config/environment'
 class App < Sinatra::Base
   # Write your code here!
   get '/reversename/:name' do
-    @name = params[:name].reverse
-    "#{@name}"
+    params[:name].reverse
   end
 
   get '/square/:number' do
@@ -17,6 +16,7 @@ class App < Sinatra::Base
     @phrase = params[:phrase]
     until number == number
       "#{@phrase}"
+      number += 1
     end
   end
   
@@ -33,6 +33,7 @@ class App < Sinatra::Base
     @operation = params[:operation]
     @number1 = params[:number1.to_i]
     @number2 = params[:number2.to_i]
-    
+    if @operation == "add"
+    elsif @operation == "subtract"
   end
 end
