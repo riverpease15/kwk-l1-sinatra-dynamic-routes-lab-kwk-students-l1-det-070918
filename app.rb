@@ -26,6 +26,13 @@ class App < Sinatra::Base
     @word3 = word3
     @word4 = word4
     @word5 = word5
-    "#{@word1}"
+    "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}"
+  end
+  
+  gets '/:operation/:number1/:number2' do
+    @operation = operation
+    @number1 = number1.to_i
+    @number2 = number2.to_i
+    
   end
 end
